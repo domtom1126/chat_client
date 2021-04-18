@@ -1,5 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Flask login</h1>
+<div class="container">
+<div class="bg-dark text-secondary px-5 mt-3 text-left rounded">
+    <div class="py-5">
+        <h1 class="display-4 text-white">HumDrum</h1>
+        <div class="">
+            <p class="">Just a chat room</p>
+        </div>
+    </div>
+</div>
+
+<!-- TODO Feed will be here -->
+<!-- Use flask socketio for sending and receiving messages -->
+
+{% if current_user.is_authenticated %}
+<form method="POST" action="/send_message">
+    <div class="input-group mb-3 container-fluid mt-3 p-5">
+        <span class="input-group-text" id="inputGroup-sizing-default">@{{ current_user.username }}</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default">
+        <button class="btn btn-dark" type="button">Send Chat</button>
+    </div>
+</form>
+{% endif %}
+
+
+
+
 {% endblock %}
+</div>
