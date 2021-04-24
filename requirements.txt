@@ -4,6 +4,7 @@ argon2-cffi==20.1.0
 async-generator==1.10
 attrs==20.3.0
 backcall==0.2.0
+bidict==0.21.2
 bleach==3.2.1
 certifi==2020.11.8
 cffi==1.14.3
@@ -24,6 +25,7 @@ entrypoints==0.3
 filelock==3.0.12
 Flask==1.1.2
 Flask-Login==0.5.0
+Flask-SocketIO==5.0.1
 Flask-SQLAlchemy==2.5.1
 Flask-WTF==0.14.3
 future==0.18.2
@@ -76,6 +78,8 @@ pyparsing==2.4.7
 pyrfr==0.8.0
 pyrsistent==0.17.3
 python-dateutil==2.8.1
+python-engineio==4.1.0
+python-socketio==5.2.1
 pytz==2020.4
 PyYAML==5.3.1
 pyzmq==20.0.0
