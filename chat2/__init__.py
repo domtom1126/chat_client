@@ -16,16 +16,17 @@ def create_app():
         send(msg, broadcast=True)
 
 # SECTION This is for production
-#     # with open('/etc/config.json') as config_file:
-#     #     config = json.load(config_file)
+    with open('/etc/config.json') as config_file:
+        config = json.load(config_file)
 
-#     # app.config['SECRET_KEY'] = config.get('SECRET_KEY')
-#     # app.config['SQLALCHEMY_DATABASE_URI'] = config.get('SQLALCHEMY_DATABASE_URI')
-# !SECTION End of production stuff
+    app.config['SECRET_KEY'] = config.get('SECRET_KEY')
+    app.config['SQLALCHEMY_DATABASE_URI'] = config.get('SQLALCHEMY_DATABASE_URI')
+# !SECTION
 
-    app.config['SECRET_KEY'] = '1234'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-
+#SECTION This is for development
+    # app.config['SECRET_KEY'] = '1234'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+#!SECTION
     db.init_app(app)
 
     login_manager = LoginManager()
